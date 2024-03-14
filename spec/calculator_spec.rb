@@ -11,6 +11,10 @@ describe Calculator, '#add' do
     expect(Calculator.add("0")).to eq(0)
   end
 
+  it "should raise error for negative number" do
+    expect{ Calculator.add("-1, -3, 3,5,6")}.to raise_error("Negatives not allowed: -1,-3")
+  end
+
   context "single number addition" do
     it "should return zero for 0" do
       expect(Calculator.add("0")).to eq(0)
