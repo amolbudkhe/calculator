@@ -24,4 +24,14 @@ describe Calculator, '#add' do
       expect(Calculator.add("40")).to eq(40)
     end
   end
+
+  context "double number" do
+    it "should return 5 for '2,3'" do
+      expect(Calculator.add('2,3')).to eq(5)
+    end
+
+    it "should return 40 for '32, 8" do
+      expect(Calculator.add('32, 8')).to eq(40)
+    end
+  end
 end
