@@ -1,7 +1,7 @@
 module Calculator
 
   def self.add(stringInput)
-    0
+    return stringInput.to_i
   end
   
 end
