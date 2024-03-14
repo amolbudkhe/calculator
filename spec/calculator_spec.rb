@@ -44,4 +44,24 @@ describe Calculator, '#add' do
       expect(Calculator.add('10, 20, 30, 5, 7, 9, 3')).to eq(84)
     end
   end
+
+  context "should support newline as delimitter" do
+    it "should return 4 for '1\n3'" do
+      expect(Calculator.add("1\n3")).to eq(4)
+    end
+
+    it "should return 6 for '1\n2,3" do
+      expect(Calculator.add("1\n2,3")).to eq(6)
+    end
+  end
+
+  context "should support new delimitter" do 
+    it "should return 3 for '//;\n1;2" do
+      expect(Calculator.add("//;\n1;2")).to eq(3)
+    end
+
+    it "should return 84 for '//$10\n 20, 30, 5, 7\n 9, 3' " do
+      expect(Calculator.add("//$10\n 20$ 30$ 5$ 7\n 9$ 3")).to eq(84)
+    end
+  end
 end
